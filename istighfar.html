@@ -1,820 +1,823 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEB P5</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            width: 100%;
-        }
-
-        .semua2 {
-            width: 100%;
-        }
-
-        .semua {
-            width: 100%;
-            margin: auto;
-        }
-
-        hr {
-            border-top: 5px;
-            border-radius: 2px;
-            line-height: 20px;
-            background-color: #152f2c;
-            margin: 20px;
-        }
-
-        .nama a {
-            padding-left: 20px;
-            margin: 0;
-            text-decoration: none;
-            font-size: 40px;
-            font-weight: bold;
-            float: left;
-            color: #152f2c;
-            text-align: left;
-            letter-spacing: 3px;
-        }
-
-        .list {
-            float: right;
-        }
-
-        /* navigasi */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        nav {
-            z-index: 2;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            line-height: 70px;
-            position: sticky;
-            top: 0;
-            background-color: white;
-            box-shadow: 0.5px 2px 5px rgba(0, 0, 0, 1);
-        }
-
-        nav ul {
-            float: left;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            list-style: none;
-        }
-
-        nav ul li {
-            float: left;
-        }
-
-        nav ul a {
-            color: #152f2c;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            padding: 0 16px;
-            letter-spacing: 3px;
-        }
-
-        nav ul a:hover {
-            color: #5A827E;
-        }
-
-        /* about */
-        #ttg {
-            background-color: white;
-        }
-
-        section {
-            margin: auto;
-            display: flex;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .desk {
-            width: 100%;
-            height: 500px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Added a second color for gradient */
-        }
-
-        .desk h2 {
-            padding-top: 110px;
-            padding-left: 12%;
-            padding-right: 12%;
-            text-align: center;
-            color: white;
-            font-size: 90px;
-            margin: auto;
-        }
-
-        .desk ol {
-            padding-top: 10px;
-        }
-
-        .desk li {
-            margin: 5px;
-            font-size: 10px;
-            text-align: center;
-            list-style-position: inside;
-            direction: ltr;
-            color: white;
-        }
-
-        header {
-            width: 100%;
-            height: 500px;
-            background-image: url(bg.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .kucing h3 {
-            margin: 0;
-            padding-top: 90px;
-            font-size: 30px;
-            text-align: center;
-            color: #353636;
-        }
-
-        .boxorang {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-bottom: 70px;
-        }
-
-        .boxpribadi {
-            width: 100%;
-            height: 280px;
-            background: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .anne img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: 20%;
-        }
-
-        .anne {
-            border-radius: 20px;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 10px;
-            margin: 30px;
-            background: #ffffff;
-            width: 200px;
-            height: 220px;
-            color: #152f2c;
-        }
-
-        /* produk */
-        #produk {
-            background-color: rgb(255, 255, 255);
-        }
-
-        .males {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 60px;
-        }
-
-        .judul h3 {
-            padding-top: 15px;
-            padding-bottom: 15px;
-        }
-
-        .judul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0;
-            border-radius: 10px;
-            text-align: center;
-            padding-bottom: 5px;
-            margin: 0;
-            background: #84AE92;
-            width: 60%;
-            height: 60px;
-            font-size: 30px;
-            color: #152f2c;
-        }
-
-        .sebelah_foto {
-            padding-top: 40px;
-            padding-bottom: 30px;
-        }
-
-        .sebelah_foto h3 {
-            padding-bottom: 0;
-            margin-bottom: 0;
-            font-size: 25px;
-            color: #353636;
-        }
-
-        .sebelah_foto p {
-            color: #6f7070;
-            padding-top: 0;
-            margin-top: 0;
-        }
-
-        .putih {
-            padding-left: 15%;
-            padding-right: 15%;
-            padding-bottom: 60px;
-            padding-top: 40px;
-        }
-
-        .samping {
-            float: left;
-            padding-top: 73px;
-            padding-bottom: 40px;
-            padding-right: 20px;
-            filter: drop-shadow(0 0 0 1);
-        }
-
-        .samping img {
-            margin-bottom: 0;
-            position: relative;
-            float: left;
-            border-radius: 20px;
-        }
-
-        .beda {
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .beda_lagi {
-            background: #5A827E;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pro_bgt h3 {
-            margin: 0;
-            padding-top: 20px;
-            font-size: 30px;
-            text-align: center;
-            color: #353636;
-        }
-
-        .konbgt h3 {
-            margin: 0;
-            padding-top: 20px;
-            font-size: 30px;
-            text-align: center;
-            color: #353636;
-        }
-
-        .cover {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12%;
-            margin-right: 12%;
-        }
-
-        .tutup {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12%;
-            margin-right: 12%;
-        }
-
-        .pro {
-            border-radius: 20px;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 10px;
-            margin: 30px;
-            background: #FAFFCA;
-            width: 200px;
-            height: 220px;
-            color: #152f2c;
-        }
-
-        .kon {
-            border-radius: 20px;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 10px;
-            margin: 30px;
-            background: white;
-            width: 200px;
-            height: 220px;
-            color: #152f2c;
-        }
-
-        .kon p {
-            margin: 5%;
-            color: #6f7070;
-        }
-
-        .pro p {
-            margin: 5%;
-            color: #6f7070;
-        }
-
-        .pro img {
-            width: 60px;
-            height: 60px;
-            margin-top: 5%;
-            margin-bottom: 0;
-        }
-
-        .kon img {
-            width: 60px;
-            height: 60px;
-            margin-top: 5%;
-            margin-bottom: 0;
-        }
-
-        /* proses */
-        .cara {
-            width: 100%;
-        }
-
-        #progres {
-            margin: auto;
-            background: #ffffff;
-        }
-
-        .astaga {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 60px;
-        }
-
-        .coba h3 {
-            padding-left: 0;
-            padding-top: 15px;
-            padding-bottom: 15px;
-        }
-
-        .coba {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0;
-            border-radius: 10px;
-            text-align: center;
-            padding-bottom: 5px;
-            margin: 0;
-            background: #84AE92;
-            width: 60%;
-            height: 60px;
-            font-size: 30px;
-            color: #152f2c;
-        }
-
-        .nyoba {
-            background: #FAFFCA;
-            width: 55%;
-            border-radius: 20px;
-            margin-top: 5%;
-            margin-left: 20%;
-            margin-right: 20%;
-            margin-bottom: 7%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        .nyoba h3 {
-            color: #353636;
-            font-size: 30px;
-        }
-
-        .nyoba li {
-            font-size: 20px;
-            color: #6f7070;
-        }
-
-        .ireng {
-            margin-left: 5%;
-        }
-
-        .item {
-            margin-left: 5%;
-        }
-
-        .cara img {
-            border-radius: 20px;
-            height: 260px;
-            width: 380px;
-            margin-right: 20%;
-            margin-top: 8%;
-            float: right;
-        }
-
-        /* galeri */
-        .container {
-            position: relative;
-            width: 100%;
-        }
-
-        .depanbg {
-            margin-bottom: 4%;
-            width: 100%;
-            height: 300px;
-            background-image: url(bg.png);
-            background-size: cover;
-        }
-
-        .depanbg h3 {
-            height: 300px;
-            font-size: 50px;
-            color: white;
-            display: flex;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Added a second color for gradient */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container img {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 320px;
-            height: 180px;
-            border-radius: 20px;
-            margin: 5%;
-        }
-
-        .judulfoto {
-            margin: 0;
-            text-align: center;
-            color: #353636;
-            font-size: 30px;
-        }
-
-        .slider {
-            background: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sliderelah {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12%;
-            margin-right: 12%;
-        }
-
-        .sliderlain {
-            background: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sliderbadah {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12%;
-            margin-right: 12%;
-        }
-
-        .sliderbeda {
-            background: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slideraja {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12%;
-            margin-right: 12%;
-        }
-
-        .videopokoknya {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .videosemua {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 640px;
-            height: 360px;
-            margin-bottom: 5%;
-        }
-
-        .video1 video {
-            border-radius: 20px;
-            height: 360px;
-            width: 640px;
-        }
-
-        .video2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 640px;
-            height: 360px;
-            margin-bottom: 10%;
-        }
-
-        .video2 video {
-            border-radius: 20px;
-            height: 360px;
-            width: 640px;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 100%;
+      }
+
+      .semua2 {
+        width: 100%;
+      }
+
+      .semua {
+        width: 100%;
+        margin: auto;
+      }
+
+      hr {
+        border-top: 5px;
+        border-radius: 2px;
+        line-height: 20px;
+        background-color: #152f2c;
+        margin: 20px;
+      }
+
+      .nama a {
+        padding-left: 20px;
+        margin: 0;
+        text-decoration: none;
+        font-size: 40px;
+        font-weight: bold;
+        float: left;
+        color: #152f2c;
+        text-align: left;
+        letter-spacing: 3px;
+      }
+
+      .list {
+        float: right;
+      }
+
+      /* navigasi */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        z-index: 2;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        line-height: 70px;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0.5px 2px 5px rgba(0, 0, 0, 1);
+      }
+
+      nav ul {
+        float: left;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        list-style: none;
+      }
+
+      nav ul li {
+        float: left;
+      }
+
+      nav ul a {
+        color: #152f2c;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 16px;
+        letter-spacing: 3px;
+      }
+
+      nav ul a:hover {
+        color: #5a827e;
+      }
+
+      /* about */
+      #ttg {
+        background-color: white;
+      }
+
+      section {
+        margin: auto;
+        display: flex;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      .desk {
+        width: 100%;
+        height: 500px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Added a second color for gradient */
+      }
+
+      .desk h2 {
+        padding-top: 110px;
+        padding-left: 12%;
+        padding-right: 12%;
+        text-align: center;
+        color: white;
+        font-size: 90px;
+        margin: auto;
+      }
+
+      .desk ol {
+        padding-top: 10px;
+      }
+
+      .desk li {
+        margin: 5px;
+        font-size: 10px;
+        text-align: center;
+        list-style-position: inside;
+        direction: ltr;
+        color: white;
+      }
+
+      header {
+        width: 100%;
+        height: 500px;
+        background-image: url(bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .kucing h3 {
+        margin: 0;
+        padding-top: 90px;
+        font-size: 30px;
+        text-align: center;
+        color: #353636;
+      }
+
+      .boxorang {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 70px;
+      }
+
+      .boxpribadi {
+        width: 100%;
+        height: 280px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .anne img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: 20%;
+      }
+
+      .anne {
+        border-radius: 20px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px;
+        margin: 30px;
+        background: #ffffff;
+        width: 200px;
+        height: 220px;
+        color: #152f2c;
+      }
+
+      /* produk */
+      #produk {
+        background-color: rgb(255, 255, 255);
+      }
+
+      .males {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .judul h3 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .judul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        border-radius: 10px;
+        text-align: center;
+        padding-bottom: 5px;
+        margin: 0;
+        background: #84ae92;
+        width: 60%;
+        height: 60px;
+        font-size: 30px;
+        color: #152f2c;
+      }
+
+      .sebelah_foto {
+        padding-top: 40px;
+        padding-bottom: 30px;
+      }
+
+      .sebelah_foto h3 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        font-size: 25px;
+        color: #353636;
+      }
+
+      .sebelah_foto p {
+        color: #6f7070;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .putih {
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 60px;
+        padding-top: 40px;
+      }
+
+      .samping {
+        float: left;
+        padding-top: 73px;
+        padding-bottom: 40px;
+        padding-right: 20px;
+        filter: drop-shadow(0 0 0 1);
+      }
+
+      .samping img {
+        margin-bottom: 0;
+        position: relative;
+        float: left;
+        border-radius: 20px;
+      }
+
+      .beda {
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .beda_lagi {
+        background: #5a827e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pro_bgt h3 {
+        margin: 0;
+        padding-top: 20px;
+        font-size: 30px;
+        text-align: center;
+        color: #353636;
+      }
+
+      .konbgt h3 {
+        margin: 0;
+        padding-top: 20px;
+        font-size: 30px;
+        text-align: center;
+        color: #353636;
+      }
+
+      .cover {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 12%;
+      }
+
+      .tutup {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 12%;
+      }
+
+      .pro {
+        border-radius: 20px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px;
+        margin: 30px;
+        background: #faffca;
+        width: 200px;
+        height: 220px;
+        color: #152f2c;
+      }
+
+      .kon {
+        border-radius: 20px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px;
+        margin: 30px;
+        background: white;
+        width: 200px;
+        height: 220px;
+        color: #152f2c;
+      }
+
+      .kon p {
+        margin: 5%;
+        color: #6f7070;
+      }
+
+      .pro p {
+        margin: 5%;
+        color: #6f7070;
+      }
+
+      .pro img {
+        width: 60px;
+        height: 60px;
+        margin-top: 5%;
+        margin-bottom: 0;
+      }
+
+      .kon img {
+        width: 60px;
+        height: 60px;
+        margin-top: 5%;
+        margin-bottom: 0;
+      }
+
+      /* proses */
+      .cara {
+        width: 100%;
+      }
+
+      #progres {
+        margin: auto;
+        background: #ffffff;
+      }
+
+      .astaga {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .coba h3 {
+        padding-left: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .coba {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        border-radius: 10px;
+        text-align: center;
+        padding-bottom: 5px;
+        margin: 0;
+        background: #84ae92;
+        width: 60%;
+        height: 60px;
+        font-size: 30px;
+        color: #152f2c;
+      }
+
+      .nyoba {
+        background: #faffca;
+        width: 55%;
+        border-radius: 20px;
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 7%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .nyoba h3 {
+        color: #353636;
+        font-size: 30px;
+      }
+
+      .nyoba li {
+        font-size: 20px;
+        color: #6f7070;
+      }
+
+      .ireng {
+        margin-left: 5%;
+      }
+
+      .item {
+        margin-left: 5%;
+      }
+
+      .cara img {
+        border-radius: 20px;
+        height: 260px;
+        width: 380px;
+        margin-right: 20%;
+        margin-top: 8%;
+        float: right;
+      }
+
+      /* galeri */
+      .container {
+        position: relative;
+        width: 100%;
+      }
+
+      .depanbg {
+        margin-bottom: 4%;
+        width: 100%;
+        height: 300px;
+        background-image: url(bg.png);
+        background-size: cover;
+      }
+
+      .depanbg h3 {
+        height: 300px;
+        font-size: 50px;
+        color: white;
+        display: flex;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Added a second color for gradient */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        height: 180px;
+        border-radius: 20px;
+        margin: 5%;
+      }
+
+      .judulfoto {
+        margin: 0;
+        text-align: center;
+        color: #353636;
+        font-size: 30px;
+      }
+
+      .slider {
+        background: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sliderelah {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 12%;
+      }
+
+      .sliderlain {
+        background: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sliderbadah {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 12%;
+      }
+
+      .sliderbeda {
+        background: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slideraja {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 12%;
+      }
+
+      .videopokoknya {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .videosemua {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 640px;
+        height: 360px;
+        margin-bottom: 5%;
+      }
+
+      .video1 video {
+        border-radius: 20px;
+        height: 360px;
+        width: 640px;
+      }
+
+      .video2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 640px;
+        height: 360px;
+        margin-bottom: 10%;
+      }
+
+      .video2 video {
+        border-radius: 20px;
+        height: 360px;
+        width: 640px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="semua">
-            <div class="nama"><a href="">Bocah Gemes</a></div>
-            <div class="list">
-                <ul>
-                    <li><a href="#ttg">Home</a></li>
-                    <li><a href="#produk">Product</a></li>
-                    <li><a="#progres">Process</a></li>
-                    <li><a href="#galeri">Gallery</a></li>
-                </ul>
-            </div>
+      <div class="semua">
+        <div class="nama"><a href="">Bocah Gemes</a></div>
+        <div class="list">
+          <ul>
+            <li><a href="#ttg">Home</a></li>
+            <li><a href="#produk">Product</a></li>
+            <li><a href="#progres">Process</a></li>
+            <li><a href="#galeri">Gallery</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="semua">
-        <section id="ttg">
-            <div class="gradasi2"></div>
-            <header>
-                <div class="desk">
-                    <h2>Smart Plant Watering System</h2>
-                </div>
-            </header>
-        </section>
-        <div class="kucing">
-            <h3>Meet the Team</h3>
+      <section id="ttg">
+        <div class="gradasi2"></div>
+        <header>
+          <div class="desk">
+            <h2>Smart Plant Watering System</h2>
+          </div>
+        </header>
+      </section>
+      <div class="kucing">
+        <h3>Meet the Team</h3>
+      </div>
+
+      <div class="boxorang">
+        <div class="boxpribadi">
+          <div class="anne">
+            <img src="anne.jpeg" alt="Khaila Mayrisky Seanne" />
+            <h4>Khaila Mayrisky Seanne</h4>
+          </div>
+          <div class="anne">
+            <img src="nay (2).jpeg" alt="Nayla Anindya Azmi" />
+            <h4>Nayla Anindya Azmi</h4>
+          </div>
+          <div class="anne">
+            <img src="salwa.jpeg" alt="Salwa Daniya Thalib" />
+            <h4>Salwa Daniya Thalib</h4>
+          </div>
+          <div class="anne">
+            <img src="zaski.jpeg" alt="Zaskia Dwi Zalianty" />
+            <h4>Zaskia Dwi Zalianty</h4>
+          </div>
+          <div class="anne">
+            <img src="ais.jpg" alt="Nur Aisyah Aninditta Putri" />
+            <h4>Nur Aisyah Aninditta Putri</h4>
+          </div>
         </div>
+      </div>
+      <hr />
 
-        <div class="boxorang">
-            <div class="boxpribadi">
-                <div class="anne">
-                    <img src="anne.jpeg" alt="Khaila Mayrisky Seanne">
-                    <h4>Khaila Mayrisky Seanne</h4>
-                </div>
-                <div class="anne">
-                    <img src="nay (2).jpeg" alt="Nayla Anindya Azmi">
-                    <h4>Nayla Anindya Azmi</h4>
-                </div>
-                <div class="anne">
-                    <img src="salwa.jpeg" alt="Salwa Daniya Thalib">
-                    <h4>Salwa Daniya Thalib</h4>
-                </div>
-                <div class="anne">
-                    <img src="zaski.jpeg" alt="Zaskia Dwi Zalianty">
-                    <h4>Zaskia Dwi Zalianty</h4>
-                </div>
-                <div class="anne">
-                    <img src="ais.jpg" alt="Nur Aisyah Aninditta Putri">
-                    <h4>Nur Aisyah Aninditta Putri</h4>
-                </div>
+      <section id="produk">
+        <div class="jelasin">
+          <div class="males">
+            <div class="judul">
+              <h3>Our Product</h3>
             </div>
+          </div>
+          <div class="putih">
+            <div class="samping">
+              <img src="gambar samping.jpeg" height="300" width="380" alt="Smart Plant Watering System" />
+            </div>
+            <div class="sebelah_foto">
+              <h3>What Is It?</h3>
+              <p>
+                Perawatan tanaman secara manual seringkali menyebabkan tanaman kekurangan atau kelebihan air. Di sisi lain, keterbatasan waktu dan kurangnya pengetahuan perawatan tanaman menjadi tantangan tersendiri, terutama di tengah
+                keterbatasan air akibat perubahan iklim.
+              </p>
+              <p>
+                Smart Plant Watering System hadir sebagai solusi dengan mengotomatiskan proses penyiraman menggunakan sensor kelembapan tanah dan mikrokontroler. Sistem ini memungkinkan penyiraman yang tepat waktu dan sesuai kebutuhan,
+                sehingga menghemat air, memudahkan perawatan, dan meningkatkan kesehatan tanaman.
+              </p>
+              <p>
+                Produk ini ditujukan bagi orang-orang yang memiliki keterbatasan waktu dalam mengurus tanaman. Dengan hadirnya produk ini yang dimana selain dapat membantu pekerjaan manusia juga sangat fleksibel karena tidak memerlukan
+                ruang dengan kriteria khusus untuk menyimpannya.
+              </p>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <div class="pro_bgt">
+            <h3>Product Advantages</h3>
+          </div>
+          <br />
+          <br />
+          <div class="beda">
+            <div class="cover">
+              <div class="pro">
+                <img src="akurat.png" alt="Akurat icon" />
+                <h2>Akurat</h2>
+                <p>Lebih akurat dalam memberikan air sesuai kebutuhan tanaman</p>
+              </div>
+
+              <div class="pro">
+                <img src="hemat.png" alt="Hemat icon" />
+                <h2>Hemat</h2>
+                <p>Menghemat waktu dan tenaga dengan penyiraman otomatis</p>
+              </div>
+
+              <div class="pro">
+                <img src="pengaturan.png" alt="Pengaturan icon" />
+                <h2>Pengaturan</h2>
+                <p>Dapat diatur untuk berbagai jenis tanaman dan kondisi lingkungan</p>
+              </div>
+
+              <div class="pro">
+                <img src="eco.png" alt="Sustainable icon" />
+                <h2>Sustainable</h2>
+                <p>Mengurangi limbah air dengan memberikan air yang tepat</p>
+              </div>
+
+              <div class="pro">
+                <img src="boost.png" alt="Boosting icon" />
+                <h2>Boosting</h2>
+                <p>Meningkatkan pertumbuhan tanaman, hingga meningkatkan hasil</p>
+              </div>
+            </div>
+            <br />
+          </div>
+          <div class="konbgt">
+            <h3>Product Disadvantages</h3>
+          </div>
+          <br />
+          <div class="beda_lagi">
+            <div class="tutup">
+              <div class="kon">
+                <img src="stabil.png" alt="Kestabilan icon" />
+                <h2>Kestabilan</h2>
+                <p>Sistem yang kurang stabil apabila tersenggol atau berpindah tempat</p>
+              </div>
+              <div class="kon">
+                <img src="bahan.png" alt="Bahan icon" />
+                <h2>Bahan</h2>
+                <p>Bahan baku yang sulit dicari, serta kendala pengiriman</p>
+              </div>
+              <div class="kon">
+                <img src="coding.png" alt="Proses icon" />
+                <h2>Proses</h2>
+                <p>Proses pembuatan rumit yang memerlukan skill pemrograman</p>
+              </div>
+              <div class="kon">
+                <img src="display.png" alt="Display icon" />
+                <h2>Display</h2>
+                <p>Pembuatan display yang sulit agar fungsional</p>
+              </div>
+              <div class="kon">
+                <img src="waktu.png" alt="Waktu icon" />
+                <h2>Waktu</h2>
+                <p>Trial and error yang membutuhkan waktu panjang</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <hr>
+      </section>
 
-        <section id="produk">
-            <div class="jelasin">
-                <div class="males">
-                    <div class="judul">
-                        <h3>Our Product</h3>
-                    </div>
-                </div>
-                <div class="putih">
-                    <div class="samping">
-                        <img src="gambar samping.jpeg" height="300" width="380" alt="Smart Plant Watering System">
-                    </div>
-                    <div class="sebelah_foto">
-                        <h3>What Is It?</h3>
-                        <p>Perawatan tanaman secara manual seringkali menyebabkan tanaman kekurangan atau kelebihan air. Di sisi lain, keterbatasan waktu dan kurangnya pengetahuan perawatan tanaman menjadi tantangan tersendiri, terutama di tengah keterbatasan air akibat perubahan iklim.</p>
-                        <p>Smart Plant Watering System hadir sebagai solusi dengan mengotomatiskan proses penyiraman menggunakan sensor kelembapan tanah dan mikrokontroler. Sistem ini memungkinkan penyiraman yang tepat waktu dan sesuai kebutuhan, sehingga menghemat air, memudahkan perawatan, dan meningkatkan kesehatan tanaman.</p>
-                        <p>Produk ini ditujukan bagi orang-orang yang memiliki keterbatasan waktu dalam mengurus tanaman. Dengan hadirnya produk ini yang dimana selain dapat membantu pekerjaan manusia juga sangat fleksibel karena tidak memerlukan ruang dengan kriteria khusus untuk menyimpannya.</p>
-                    </div>
-                </div>
-                <br>
-                <hr>
-                <div class="pro_bgt">
-                    <h3>Product Advantages</h3>
-                </div>
-                <br>
-                <br>
-                <div class="beda">
-                    <div class="cover">
-                        <div class="pro">
-                            <img src="akurat.png" alt="Akurat icon">
-                            <h2>Akurat</h2>
-                            <p>Lebih akurat dalam memberikan air sesuai kebutuhan tanaman</p>
-                        </div>
-
-                        <div class="pro">
-                            <img src="hemat.png" alt="Hemat icon">
-                            <h2>Hemat</h2>
-                            <p>Menghemat waktu dan tenaga dengan penyiraman otomatis</p>
-                        </div>
-
-
-                        <div class="pro">
-                            <img src="pengaturan.png" alt="Pengaturan icon">
-                            <h2>Pengaturan</h2>
-                            <p>Dapat diatur untuk berbagai jenis tanaman dan kondisi lingkungan</p>
-                        </div>
-
-                        <div class="pro">
-                            <img src="eco.png" alt="Sustainable icon">
-                            <h2>Sustainable</h2>
-                            <p>Mengurangi limbah air dengan memberikan air yang tepat</p>
-                        </div>
-
-
-                        <div class="pro">
-                            <img src="boost.png" alt="Boosting icon">
-                            <h2>Boosting</h2>
-                            <p>Meningkatkan pertumbuhan tanaman, hingga meningkatkan hasil</p>
-                        </div>
-                    </div>
-                    <br>
-
-                </div>
-                <div class="konbgt">
-                    <h3>Product Disadvantages</h3>
-                </div>
-                <br>
-                <div class="beda_lagi">
-                    <div class="tutup">
-                        <div class="kon">
-                            <img src="stabil.png" alt="Kestabilan icon">
-                            <h2>Kestabilan</h2>
-                            <p>Sistem yang kurang stabil apabila tersenggol atau berpindah tempat</p>
-                        </div>
-                        <div class="kon">
-                            <img src="bahan.png" alt="Bahan icon">
-                            <h2>Bahan</h2>
-                            <p>Bahan baku yang sulit dicari, serta kendala pengiriman</p>
-                        </div>
-                        <div class="kon">
-                            <img src="coding.png" alt="Proses icon">
-                            <h2>Proses</h2>
-                            <p>Proses pembuatan rumit yang memerlukan skill pemrograman</p>
-                        </div>
-                        <div class="kon">
-                            <img src="display.png" alt="Display icon">
-                            <h2>Display</h2>
-                            <p>Pembuatan display yang sulit agar fungsional</p>
-                        </div>
-                        <div class="kon">
-                            <img src="waktu.png" alt="Waktu icon">
-                            <h2>Waktu</h2>
-                            <p>Trial and error yang membutuhkan waktu panjang</p>
-                        </div>
-                    </div>
-                </div>
-
+      <section id="progres">
+        <div class="cara">
+          <div class="astaga">
+            <div class="coba">
+              <h3>How to Make It</h3>
             </div>
-        </section>
-
-
-        <section id="progres">
-            <div class="cara">
-                <div class="astaga">
-                    <div class="coba">
-                        <h3>How to Make It</h3>
-                    </div>
-                </div>
-                <img src="ngelem bunga.jpeg" alt="Making the smart plant watering system">
-                <div class="nyoba">
-
-                    <div class="item">
-                        <h3>Material :</h3>
-                        <div class="list2">
-                            <ol>
-                                <li>Arduino Uno</li>
-                                <li>Breadboard SBY-170</li>
-                                <li>Horizontal Submersible DC</li>
-                                <li>Selang Pompa</li>
-                                <li>Power Supply Breadboard</li>
-                                <li>Capacitive Soil Moisture Sensor</li>
-                                <li>LCD</li>
-                                <li>Tanaman</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <div class="ireng">
-                        <h3>Langkah Pembuatan :</h3>
-                        <div class="list3">
-                            <ol>
-                                <li>Penetuan aspek yang akan diukur oleh sensor</li>
-                                <li>Penyusunan diagram atau rancangan awal sebagai fungsi utama</li>
-                                <li>Penyusunan program</li>
-                                <li>Trial dan error struktur program utama</li>
-                                <li>Pelengkapan fungsi</li>
-                                <li>Trial dan error keseluruhan fungsi</li>
-                                <li>Penyusunan sistem pada display</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <img src="ngelem bunga.jpeg" alt="Making the smart plant watering system" />
+          <div class="nyoba">
+            <div class="item">
+              <h3>Material :</h3>
+              <div class="list2">
+                <ol>
+                  <li>Arduino Uno</li>
+                  <li>Breadboard SBY-170</li>
+                  <li>Horizontal Submersible DC</li>
+                  <li>Selang Pompa</li>
+                  <li>Power Supply Breadboard</li>
+                  <li>Capacitive Soil Moisture Sensor</li>
+                  <li>LCD</li>
+                  <li>Tanaman</li>
+                </ol>
+              </div>
             </div>
-        </section>
-        <hr>
-        <section id="galeri">
-            <div class="container">
-                <div class="depanbg">
-                    <h3>Our Gallery</h3>
-                </div>
-                <div class="judulfoto">
-                    <h3>Photos</h3>
-                </div>
-                <div class="slider">
-                    <div class="sliderelah">
-                        <img id="slide-1" src="bunga.jpeg" alt="Flower image 1">
-                        <img id="slide-2" src="ngelem bunga.jpeg" alt="Flower image 2">
-                        <img id="slide-3" src="taneman buat produk.jpeg" alt="Flower image 3">
-                    </div>
-                </div>
-                <div class="sliderlain">
-                    <div class="sliderbadah">
-                        <img id="slide-4" src="tes lcd.jpeg" alt="LCD test image">
-                        <img id="slide-5" src="motor.jpeg" alt="Motor image">
-                        <img id="slide-6" src="kabel karpet nayla.jpeg" alt="Cable setup image 1">
-                    </div>
-                </div>
-                <div class="sliderbeda">
-                    <div class="slideraja">
-                        <img id="slide-7" src="kabel lantai sekolah.jpeg" alt="Cable setup image 2">
-                        <img id="slide-8" src="kabel closap.jpeg" alt="Cable setup image 3">
-                        <img id="slide-9" src="kabel dan lcd.jpeg" alt="Cable and LCD image">
-                    </div>
-                </div>
-                <hr>
-                <div class="judulfoto">
-                    <h3>Videos</h3>
-                </div>
-                <div class="videosemua">
-                    <div class="video1">
-                        <video controls src="tes air lagi.mp4" muted></video>
-                    </div>
-                </div>
-                <div class="videopokoknya">
-                    <div class="video2">
-                        <video controls src="tes lcd.mp4" muted></video>
-                    </div>
-                </div>
+
+            <div class="ireng">
+              <h3>Langkah Pembuatan :</h3>
+              <div class="list3">
+                <ol>
+                  <li>Penetuan aspek yang akan diukur oleh sensor</li>
+                  <li>Penyusunan diagram atau rancangan awal sebagai fungsi utama</li>
+                  <li>Penyusunan program</li>
+                  <li>Trial dan error struktur program utama</li>
+                  <li>Pelengkapan fungsi</li>
+                  <li>Trial dan error keseluruhan fungsi</li>
+                  <li>Penyusunan sistem pada display</li>
+                </ol>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="galeri">
+        <div class="container">
+          <div class="depanbg">
+            <h3>Our Gallery</h3>
+          </div>
+          <div class="judulfoto">
+            <h3>Photos</h3>
+          </div>
+          <div class="slider">
+            <div class="sliderelah">
+              <img id="slide-1" src="bunga.jpeg" alt="Flower image 1" />
+              <img id="slide-2" src="ngelem bunga.jpeg" alt="Flower image 2" />
+              <img id="slide-3" src="taneman buat produk.jpeg" alt="Flower image 3" />
+            </div>
+          </div>
+          <div class="sliderlain">
+            <div class="sliderbadah">
+              <img id="slide-4" src="tes lcd.jpeg" alt="LCD test image" />
+              <img id="slide-5" src="motor.jpeg" alt="Motor image" />
+              <img id="slide-6" src="kabel karpet nayla.jpeg" alt="Cable setup image 1" />
+            </div>
+          </div>
+          <div class="sliderbeda">
+            <div class="slideraja">
+              <img id="slide-7" src="kabel lantai sekolah.jpeg" alt="Cable setup image 2" />
+              <img id="slide-8" src="kabel closap.jpeg" alt="Cable setup image 3" />
+              <img id="slide-9" src="kabel dan lcd.jpeg" alt="Cable and LCD image" />
+            </div>
+          </div>
+          <hr />
+          <div class="judulfoto">
+            <h3>Videos</h3>
+          </div>
+          <div class="videosemua">
+            <div class="video1">
+              <video controls src="tes air lagi.mp4" muted></video>
+            </div>
+          </div>
+          <div class="videopokoknya">
+            <div class="video2">
+              <video controls src="tes lcd.mp4" muted></video>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <div class="kontak">
-        <p></p>
+      <p></p>
     </div>
-</body>
+  </body>
 </html>
